@@ -65,10 +65,42 @@
             height: 0;
             opacity: 0;
             transition: opacity .5s ease, height .5s ease;
+            // transition: transform .5s ease;
+            // transform: translateY(-100%);
+
+            & .navigation__link {
+                color: $first-color;
+            }
         }
 
-        &:hover {
+        &:hover, &.active {
             overflow: unset;
+
+            &::after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 3px;
+                margin: 0 auto;
+                content: '';
+                background-color: $third-color;
+                animation: line .5s ease;
+
+                @keyframes line {
+                    0% {
+                        width: 0;
+                        opacity: 0;
+                    }
+
+                    100% {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
 
             & > .sublevel-1 {
                 @include rem(width, 288px);
@@ -80,10 +112,7 @@
                 background-color: $second-color;
                 box-shadow: 3px 4px 16px $box-shadow-sublevel-1;
                 opacity: 1;
-
-                & .navigation__link {
-                    color: $first-color;
-                }
+                // transform: translateY(0);
             }
 
             & > .navigation__link {

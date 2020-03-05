@@ -503,11 +503,52 @@ table {
     transition: opacity .5s ease, height .5s ease;
 }
 
-.navigation__item:hover {
+.navigation__item > .sublevel-1 .navigation__link {
+    color: #fff;
+}
+
+.navigation__item:hover, .navigation__item.active {
     overflow: unset;
 }
 
-.navigation__item:hover > .sublevel-1 {
+.navigation__item:hover::after, .navigation__item.active::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 0 auto;
+    content: '';
+    background-color: #a99269;
+    -webkit-animation: line .5s ease;
+            animation: line .5s ease;
+}
+
+@-webkit-keyframes line {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes line {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.navigation__item:hover > .sublevel-1, .navigation__item.active > .sublevel-1 {
     width: 288px;
     width: 18rem;
     position: absolute;
@@ -523,11 +564,7 @@ table {
     opacity: 1;
 }
 
-.navigation__item:hover > .sublevel-1 .navigation__link {
-    color: #fff;
-}
-
-.navigation__item:hover > .navigation__link {
+.navigation__item:hover > .navigation__link, .navigation__item.active > .navigation__link {
     color: #a99269;
 }
 
