@@ -1,0 +1,91 @@
+.hamburger {
+    @media all and (min-width: $screen-md) {
+        display: none !important;
+    }
+
+    @media all and (max-width: $max-screen-sm) {
+        display: block;
+    }
+}
+
+.navigation {
+    @media all and (min-width: $screen-md) {
+        display: block;
+    }
+
+    @media all and (max-width: $max-screen-sm) {
+        display: none;
+    }
+
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &:first-child {
+            @include rem(padding, 0 20px);
+        }
+
+        &--sub {}
+    }
+
+    &__link {
+        @include rem((
+            padding: 18px 9px,
+            font-size: 15px
+        ));
+
+        font-family: $main-font;
+        font-weight: 400;
+        color: $second-color;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $third-color;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        & > .sublevel-1 {
+            display: none;
+
+            &.navigation__item {
+                background-color: red;
+            }
+        }
+
+        &:hover {
+            & > .sublevel-1 {
+                display: flex;
+            }
+
+            & > .navigation__link {
+                color: $third-color;
+            }
+        }
+
+        &.active {
+            & > .navigation__link {
+                color: $third-color;
+            }
+        }
+    }
+}
+
+.mm-menu.mm-offcanvas.mm-current { //TODO
+    @media all and (min-width: $screen-md) {
+        display: none !important;
+    }
+
+    @media all and (max-width: $max-screen-sm) {
+        display: block;
+    }
+}
