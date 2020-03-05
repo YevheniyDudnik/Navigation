@@ -430,6 +430,8 @@ table {
 }
 
 .navigation__list {
+    padding: 0 20px;
+    padding: 0 1.25rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -441,11 +443,6 @@ table {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-}
-
-.navigation__list:first-child {
-    padding: 0 20px;
-    padding: 0 1.25rem;
 }
 
 .navigation__link {
@@ -478,10 +475,6 @@ table {
 
 .navigation__item > .sublevel-1 {
     display: none;
-}
-
-.navigation__item > .sublevel-1.navigation__item {
-    background-color: red;
 }
 
 .navigation__item:hover > .sublevel-1 {

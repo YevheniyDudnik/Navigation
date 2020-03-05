@@ -22,13 +22,11 @@
     margin: 0 auto;
 
     &__list {
+        @include rem(padding, 0 20px);
+
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
-        &:first-child {
-            @include rem(padding, 0 20px);
-        }
 
         &--sub {}
     }
@@ -56,10 +54,6 @@
 
         & > .sublevel-1 {
             display: none;
-
-            &.navigation__item {
-                background-color: red;
-            }
         }
 
         &:hover {
