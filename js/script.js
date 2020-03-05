@@ -3,10 +3,11 @@ $(document).resize(function(){
 });
 
 function displayNavigationMobile() { //TODO
-    let html = 'html';
     let navigationMobile = '#navigation--mobile';
     if ($(window).width() >= 768){
-        $(html).removeClass();
-        $(navigationMobile).removeClass('mm-current mm-opened');
+        if (typeof $(navigationMobile).data('mmenu') !== 'undefined') {
+            $(navigationMobile).data('mmenu').close();
+        };
     };
 }
+

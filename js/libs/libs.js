@@ -54,6 +54,7 @@ function navigationSublevelWrap(list, subnavClass) {
             depth = menuList.parents('ul').length;
 
         if (depth > 0) {
+            menuList.parent().addClass('has-child');
             menuList.wrap(function() {
                 return '<div class="' + subnavClass + depth + '"></div>';
             });

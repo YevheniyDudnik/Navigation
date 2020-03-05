@@ -415,6 +415,7 @@ table {
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
+    background-color: #fff;
 }
 
 @media all and (min-width: 768px) {
@@ -445,6 +446,19 @@ table {
             justify-content: space-between;
 }
 
+.navigation__list--sub {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+}
+
 .navigation__link {
     padding: 18px 9px;
     padding: 1.125rem 0.5625rem;
@@ -455,6 +469,9 @@ table {
     color: #5d5a57;
     text-decoration: none;
     text-transform: uppercase;
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease;
 }
 
 .navigation__link:hover {
@@ -462,6 +479,7 @@ table {
 }
 
 .navigation__item {
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -471,17 +489,42 @@ table {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    overflow: hidden;
+    -webkit-transition: color .5s ease, overflow .5s ease;
+    -o-transition: color .5s ease, overflow .5s ease;
+    transition: color .5s ease, overflow .5s ease;
 }
 
 .navigation__item > .sublevel-1 {
-    display: none;
+    height: 0;
+    opacity: 0;
+    -webkit-transition: opacity .5s ease, height .5s ease;
+    -o-transition: opacity .5s ease, height .5s ease;
+    transition: opacity .5s ease, height .5s ease;
+}
+
+.navigation__item:hover {
+    overflow: unset;
 }
 
 .navigation__item:hover > .sublevel-1 {
+    width: 288px;
+    width: 18rem;
+    position: absolute;
+    top: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    height: auto;
+    background-color: #5d5a57;
+    -webkit-box-shadow: 3px 4px 16px rgba(26, 26, 26, 0.3);
+            box-shadow: 3px 4px 16px rgba(26, 26, 26, 0.3);
+    opacity: 1;
+}
+
+.navigation__item:hover > .sublevel-1 .navigation__link {
+    color: #fff;
 }
 
 .navigation__item:hover > .navigation__link {
@@ -490,18 +533,6 @@ table {
 
 .navigation__item.active > .navigation__link {
     color: #a99269;
-}
-
-@media all and (min-width: 768px) {
-    .mm-menu.mm-offcanvas.mm-current {
-        display: none !important;
-    }
-}
-
-@media all and (max-width: 767px) {
-    .mm-menu.mm-offcanvas.mm-current {
-        display: block;
-    }
 }
 
 .mm-menu,
