@@ -559,14 +559,6 @@ table {
 }
 
 .navigation__item > .sublevel-1 .has-child::before {
-    padding: 18px 18px 17px;
-    padding: 1.125rem 1.125rem 1.0625rem;
-    width: 15px;
-    width: 0.9375rem;
-    height: 16px;
-    height: 1rem;
-    font-size: 16px;
-    font-size: 1rem;
     position: absolute;
     top: 0;
     right: 0;
@@ -595,6 +587,10 @@ table {
     transition: opacity .5s ease, height .5s ease;
 }
 
+.navigation__item > .sublevel-1 .has-child .sublevel-2 .navigation__link {
+    display: none;
+}
+
 .navigation__item > .sublevel-1 .has-child:hover::before {
     content: "\f067";
     background-color: #a99269;
@@ -610,6 +606,13 @@ table {
     height: auto;
     background-color: #5d5a57;
     opacity: 1;
+}
+
+.navigation__item > .sublevel-1 .has-child:hover .sublevel-2 .navigation__link {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .navigation__item:hover::after, .navigation__item.active::after {
@@ -670,6 +673,17 @@ table {
     display: -ms-flexbox;
     display: flex;
     color: #fff;
+}
+
+.navigation__item:hover > .sublevel-1 .has-child::before, .navigation__item.active > .sublevel-1 .has-child::before {
+    padding: 18px 18px 17px;
+    padding: 1.125rem 1.125rem 1.0625rem;
+    width: 15px;
+    width: 0.9375rem;
+    height: 16px;
+    height: 1rem;
+    font-size: 16px;
+    font-size: 1rem;
 }
 
 .navigation__item:hover > .navigation__link, .navigation__item.active > .navigation__link {

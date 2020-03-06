@@ -117,13 +117,6 @@
 
             & .has-child {
                 &::before {
-                    @include rem((
-                        padding: 18px 18px 17px,
-                        width: 15px,
-                        height: 16px,
-                        font-size: 16px
-                    ));
-
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -146,6 +139,10 @@
                     height: 0;
                     opacity: 0;
                     transition: opacity .5s ease, height .5s ease;
+
+                    & .navigation__link {
+                        display: none;
+                    }
                 }
 
                 &:hover {
@@ -161,6 +158,10 @@
                         height: auto;
                         background-color: $second-color;
                         opacity: 1;
+
+                        & .navigation__link {
+                            display: flex;
+                        }
                     }
                 }
             }
@@ -207,6 +208,17 @@
                 & .navigation__link {
                     display: flex;
                     color: $first-color;
+                }
+
+                & .has-child {
+                    &::before {
+                        @include rem((
+                            padding: 18px 18px 17px,
+                            width: 15px,
+                            height: 16px,
+                            font-size: 16px
+                        ));
+                    }
                 }
             }
 
