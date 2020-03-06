@@ -606,7 +606,7 @@ table {
     display: -ms-flexbox;
     display: flex;
     height: auto;
-    background-color: #5d5a57;
+    background-color: transparent;
     opacity: 1;
 }
 
@@ -663,7 +663,7 @@ table {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    background-color: #5d5a57;
+    background-color: rgba(92, 89, 87, 0.95);
     -webkit-box-shadow: 3px 4px 16px rgba(26, 26, 26, 0.3);
             box-shadow: 3px 4px 16px rgba(26, 26, 26, 0.3);
     opacity: 1;
