@@ -106,12 +106,12 @@ function navigationSublevelWrap(list, subnavClass) {
     };
 
     // accordion slide visibility
-    var showSlide = function(slide) {
-        return slide.css({position: '', top: '', left: '', width: '',});
-    };
-    var hideSlide = function(slide) {
-        return slide.show().css({position: 'absolute', top: -9999, left: -9999, width: slide.width(),});
-    };
+    // var showSlide = function(slide) {
+    //     return slide.css({position: '', top: '', left: '', width: '',});
+    // };
+    // var hideSlide = function(slide) {
+    //     return slide.show().css({position: 'absolute', top: -9999, left: -9999, width: slide.width(),});
+    // };
 })(jQuery);
 
 // check if drop down fits in main parent container, and add class if it doesn't

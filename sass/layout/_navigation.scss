@@ -1,7 +1,3 @@
-body {
-    background-color: $emperor;
-}
-
 .hamburger {
     @media all and (min-width: $screen-md) {
         display: none !important;
@@ -25,6 +21,11 @@ body {
     max-width: 1140px;
     margin: 0 auto;
     background-color: $first-color;
+    transition: box-shadow .5s ease;
+
+    &:hover {
+        box-shadow: 0 0 3px $box-shadow-navigation-hover;
+    }
 
     &__list {
         @include rem(padding, 0 20px);
@@ -86,6 +87,7 @@ body {
                 display: inline-block;
                 width: 0;
                 height: 0;
+                cursor: pointer;
                 content: "";
                 border-color: $third-color transparent transparent transparent;
                 border-style: solid;
@@ -94,7 +96,7 @@ body {
 
         & > .sublevel-1 {
             opacity: 0;
-            transition: opacity .5s ease;
+            transition: opacity .5s ease, box-shadow .5s ease;
             // transition: transform .5s ease;
             // transform: translateY(-100%);
 
@@ -115,15 +117,11 @@ body {
 
             & .has-child {
                 &::before {
-                    display: none;
-                }
-
-                & .opener {
                     @include rem((
-                        font-size: 16px,
+                        padding: 18px 18px 17px,
                         width: 15px,
                         height: 16px,
-                        padding: 18px 18px 17px
+                        font-size: 16px
                     ));
 
                     position: absolute;
@@ -141,6 +139,29 @@ body {
                     content: "\f068";
                     text-rendering: auto;
                     border: 0;
+                    transition: content .5s ease, background-color .5s ease;
+                }
+
+                & .sublevel-2 {
+                    height: 0;
+                    opacity: 0;
+                    transition: opacity .5s ease, height .5s ease;
+                }
+
+                &:hover {
+                    &::before {
+                        content: "\f067";
+                        background-color: $third-color;
+                    }
+
+                    & .sublevel-2 {
+                        @include rem(width, 288px);
+
+                        display: flex;
+                        height: auto;
+                        background-color: $second-color;
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -179,7 +200,7 @@ body {
                 top: 100%;
                 display: flex;
                 background-color: $second-color;
-                box-shadow: 3px 4px 16px $box-shadow-sublevel-1;
+                box-shadow: 3px 4px 16px $box-shadow-sublevel-hover;
                 opacity: 1;
                 // transform: translateY(0);
 
