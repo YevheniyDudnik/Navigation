@@ -1,0 +1,106 @@
+.hamburger {
+    @media all and (max-width: $max-screen-sm) {
+        display: block;
+    }
+}
+
+.navigation {
+    @media all and (max-width: $max-screen-sm) {
+        display: none;
+    }
+}
+
+.mm {
+    &-menu {
+        @include rem(max-width, 288px);
+    }
+
+    &-title {
+        @include rem((
+            padding: 18px 0,
+            font-size: 15px
+        ));
+
+        font-family: $main-font;
+        color: $third-color;
+        text-transform: uppercase;
+    }
+}
+
+.mm-navbar {
+    @include rem((
+        height: 56px,
+        padding: 0 56px
+    ));
+}
+
+.mm-btn {
+    @include rem((
+        width: 56px,
+        height: 56px
+    ));
+}
+
+.mm-navbar .mm-btn:first-child {
+    @include rem(padding-left, 28px);
+}
+
+.mm-navbar .mm-btn:last-child {
+    @include rem(padding-right, 28px);
+}
+
+.mm-panels > .mm-panel.mm-hasnavbar {
+    @include rem(padding-top, 56px);
+}
+
+.mm-hasnavbar-top-1 .mm-panels,
+.mm-navbar-top-2 {
+    @include rem(top, 56px);
+}
+
+.mm-listview .mm-next {
+    @include rem(width, 56px);
+}
+
+.mm-listview .mm-next + a,
+.mm-listview .mm-next + span {
+    @include rem(margin-right, 56px);
+}
+
+html.mm-opening .mm-slideout {
+    -webkit-transform: translate3d(80%, 0, 0);
+    transform: translate3d(80%, 0, 0);
+}
+
+@media all and (max-width: 175px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(140px, 0, 0);
+        transform: translate3d(140px, 0, 0);
+    }
+}
+
+@media all and (min-width: 360px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(288px, 0, 0);
+        transform: translate3d(288px, 0, 0);
+    }
+}
+
+html.mm-opening.mm-columns-1 .mm-slideout {
+    -webkit-transform: translate3d(80%, 0, 0);
+    transform: translate3d(80%, 0, 0);
+}
+
+@media all and (max-width: 175px) {
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(140px, 0, 0);
+        transform: translate3d(140px, 0, 0);
+    }
+}
+
+@media all and (min-width: 360px) {
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(288px, 0, 0);
+        transform: translate3d(288px, 0, 0);
+    }
+}

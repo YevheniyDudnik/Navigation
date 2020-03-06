@@ -1,22 +1,4 @@
-.hamburger {
-    @media all and (min-width: $screen-md) {
-        display: none !important;
-    }
-
-    @media all and (max-width: $max-screen-sm) {
-        display: block;
-    }
-}
-
 .navigation {
-    @media all and (min-width: $screen-md) {
-        display: block;
-    }
-
-    @media all and (max-width: $max-screen-sm) {
-        display: none;
-    }
-
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
@@ -48,7 +30,6 @@
         ));
 
         font-family: $main-font;
-        font-weight: 400;
         color: $second-color;
         text-decoration: none;
         text-transform: uppercase;

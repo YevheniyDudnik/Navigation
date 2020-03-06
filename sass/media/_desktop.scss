@@ -1,0 +1,11 @@
+.hamburger {
+    @media all and (min-width: $screen-md) {
+        display: none !important;
+    }
+}
+
+.navigation {
+    @media all and (min-width: $screen-md) {
+        display: block;
+    }
+}
