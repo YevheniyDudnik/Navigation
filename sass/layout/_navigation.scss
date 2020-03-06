@@ -107,6 +107,8 @@
             }
 
             & .navigation__link {
+                @include rem(padding-left, 27px);
+
                 display: none;
                 transition: background-color .5s ease;
 
