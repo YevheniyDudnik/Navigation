@@ -1,7 +1,7 @@
 {
   "name": "navigation",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Link](https://yevheniydudnik.github.io/Navigation/index.html)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +17,14 @@
     "stylelint": "^13.2.0",
     "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-standard": "^20.0.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YevheniyDudnik/Navigation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YevheniyDudnik/Navigation/issues"
+  },
+  "homepage": "https://github.com/YevheniyDudnik/Navigation#readme"
 }
