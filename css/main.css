@@ -693,10 +693,10 @@ table {
 
 @media all and (max-width: 767px) {
     .hamburger {
-        width: 56px;
-        width: 3.5rem;
-        height: 56px;
-        height: 3.5rem;
+        width: 28px;
+        width: 1.75rem;
+        height: 28px;
+        height: 1.75rem;
         display: block;
     }
     .navigation {
