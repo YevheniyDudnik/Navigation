@@ -1,11 +1,15 @@
-.hamburger {
-    @media all and (min-width: $screen-md) {
+@media all and (min-width: $screen-md) {
+    .hamburger {
         display: none !important;
     }
-}
 
-.navigation {
-    @media all and (min-width: $screen-md) {
+    .navigation {
         display: block;
+
+        &.has-child {
+            &::before {
+                display: inline-block;
+            }
+        }
     }
 }

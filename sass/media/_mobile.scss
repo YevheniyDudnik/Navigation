@@ -1,30 +1,99 @@
-.hamburger {
-    @media all and (max-width: $max-screen-sm) {
-        display: block;
-    }
-}
-
-.navigation {
-    @media all and (max-width: $max-screen-sm) {
-        display: none;
-    }
-}
-
-.mm {
-    &-menu {
-        @include rem(max-width, 288px);
-    }
-
-    &-title {
+@media all and (max-width: $max-screen-sm) {
+    .hamburger {
         @include rem((
-            padding: 18px 0,
-            font-size: 15px
+            width: 56px,
+            height: 56px
         ));
 
-        font-family: $main-font;
-        color: $third-color;
-        text-transform: uppercase;
+        display: block;
     }
+
+    .navigation {
+        display: none;
+
+        &__item {
+            &::after {
+                display: none !important;
+            }
+        }
+
+        &__link {
+            color: $first-color !important;
+            transition: background-color .5s ease;
+
+            &:hover {
+                background-color: $third-color;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 175px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(140px, 0, 0);
+        transform: translate3d(140px, 0, 0);
+    }
+
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(140px, 0, 0);
+        transform: translate3d(140px, 0, 0);
+    }
+}
+
+@media all and (min-width: 176px) and (max-width: 359px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(80%, 0, 0);
+        transform: translate3d(80%, 0, 0);
+    }
+
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(80%, 0, 0);
+        transform: translate3d(80%, 0, 0);
+    }
+}
+
+@media all and (min-width: 360px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(288px, 0, 0);
+        transform: translate3d(288px, 0, 0);
+    }
+
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(288px, 0, 0);
+        transform: translate3d(288px, 0, 0);
+    }
+}
+
+.mm-listview > li,
+.mm-listview > li .mm-next,
+.mm-listview > li .mm-next::before,
+.mm-listview > li::after {
+    background-color: transparent;
+}
+
+.mm-menu {
+    @include rem(max-width, 288px);
+
+    background-color: $second-color;
+}
+
+.mm-close.mm-btn {
+    transition: background-color .5s ease;
+
+    &:hover {
+        background-color: $third-color;
+    }
+}
+
+.mm-title {
+    @include rem((
+        padding: 18px 0,
+        font-size: 15px
+    ));
+
+    font-family: $main-font;
+    color: $first-color;
+    text-transform: uppercase;
 }
 
 .mm-navbar {
@@ -32,6 +101,16 @@
         height: 56px,
         padding: 0 56px
     ));
+
+    transition: background-color .5s ease;
+
+    &:hover {
+        background-color: $third-color;
+    }
+}
+
+.mm-navbar.mm-hasbtns {
+    @include rem(padding, 0 56px);
 }
 
 .mm-btn {
@@ -60,6 +139,13 @@
 
 .mm-listview .mm-next {
     @include rem(width, 56px);
+
+    background-color: transparent;
+    transition: background-color .5s ease;
+
+    &:hover {
+        background-color: $third-color;
+    }
 }
 
 .mm-listview .mm-next + a,
@@ -67,40 +153,23 @@
     @include rem(margin-right, 56px);
 }
 
-html.mm-opening .mm-slideout {
-    -webkit-transform: translate3d(80%, 0, 0);
-    transform: translate3d(80%, 0, 0);
+.mm-listview > li > a,
+.mm-listview > li > span {
+    color: $first-color;
 }
 
-@media all and (max-width: 175px) {
-    html.mm-opening .mm-slideout {
-        -webkit-transform: translate3d(140px, 0, 0);
-        transform: translate3d(140px, 0, 0);
-    }
+.mm-menu .mm-btn::after,
+.mm-menu .mm-btn::before {
+    border-color: $first-color;
 }
 
-@media all and (min-width: 360px) {
-    html.mm-opening .mm-slideout {
-        -webkit-transform: translate3d(288px, 0, 0);
-        transform: translate3d(288px, 0, 0);
-    }
+.mm-menu .mm-listview > li .mm-arrow::after,
+.mm-menu .mm-listview > li .mm-next::after {
+    border-color: $first-color;
 }
 
-html.mm-opening.mm-columns-1 .mm-slideout {
-    -webkit-transform: translate3d(80%, 0, 0);
-    transform: translate3d(80%, 0, 0);
-}
-
-@media all and (max-width: 175px) {
-    html.mm-opening.mm-columns-1 .mm-slideout {
-        -webkit-transform: translate3d(140px, 0, 0);
-        transform: translate3d(140px, 0, 0);
-    }
-}
-
-@media all and (min-width: 360px) {
-    html.mm-opening.mm-columns-1 .mm-slideout {
-        -webkit-transform: translate3d(288px, 0, 0);
-        transform: translate3d(288px, 0, 0);
+.navigation__item.has-child::before {
+    @media all and (max-width: $max-screen-sm) {
+        display: none;
     }
 }

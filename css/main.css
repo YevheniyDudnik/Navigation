@@ -404,6 +404,8 @@ table {
     max-width: 1140px;
     margin: 0 auto;
     background-color: #fff;
+    -webkit-box-shadow: 0 0 3px transparent;
+            box-shadow: 0 0 3px transparent;
     -webkit-transition: -webkit-box-shadow .5s ease;
     transition: -webkit-box-shadow .5s ease;
     -o-transition: box-shadow .5s ease;
@@ -500,7 +502,6 @@ table {
     right: 0.5625rem;
     position: absolute;
     top: 40%;
-    display: inline-block;
     width: 0;
     height: 0;
     cursor: pointer;
@@ -581,7 +582,7 @@ table {
     display: -ms-flexbox;
     display: flex;
     height: auto;
-    background-color: transparent;
+    background-color: #a99269;
     opacity: 1;
 }
 
@@ -590,6 +591,13 @@ table {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+
+.navigation__item > .sublevel-1 .has-child:hover .sublevel-2 .navigation__link:hover {
+    background-color: #5d5a57;
 }
 
 .navigation__item:hover::after, .navigation__item.active::after {
@@ -675,29 +683,93 @@ table {
     .hamburger {
         display: none !important;
     }
-}
-
-@media all and (min-width: 768px) {
     .navigation {
         display: block;
+    }
+    .navigation.has-child::before {
+        display: inline-block;
     }
 }
 
 @media all and (max-width: 767px) {
     .hamburger {
+        width: 56px;
+        width: 3.5rem;
+        height: 56px;
+        height: 3.5rem;
         display: block;
     }
-}
-
-@media all and (max-width: 767px) {
     .navigation {
         display: none;
     }
+    .navigation__item::after {
+        display: none !important;
+    }
+    .navigation__link {
+        color: #fff !important;
+        -webkit-transition: background-color .5s ease;
+        -o-transition: background-color .5s ease;
+        transition: background-color .5s ease;
+    }
+    .navigation__link:hover {
+        background-color: #a99269;
+    }
+}
+
+@media all and (max-width: 175px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(140px, 0, 0);
+        transform: translate3d(140px, 0, 0);
+    }
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(140px, 0, 0);
+        transform: translate3d(140px, 0, 0);
+    }
+}
+
+@media all and (min-width: 176px) and (max-width: 359px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(80%, 0, 0);
+        transform: translate3d(80%, 0, 0);
+    }
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(80%, 0, 0);
+        transform: translate3d(80%, 0, 0);
+    }
+}
+
+@media all and (min-width: 360px) {
+    html.mm-opening .mm-slideout {
+        -webkit-transform: translate3d(288px, 0, 0);
+        transform: translate3d(288px, 0, 0);
+    }
+    html.mm-opening.mm-columns-1 .mm-slideout {
+        -webkit-transform: translate3d(288px, 0, 0);
+        transform: translate3d(288px, 0, 0);
+    }
+}
+
+.mm-listview > li,
+.mm-listview > li .mm-next,
+.mm-listview > li .mm-next::before,
+.mm-listview > li::after {
+    background-color: transparent;
 }
 
 .mm-menu {
     max-width: 288px;
     max-width: 18rem;
+    background-color: #5d5a57;
+}
+
+.mm-close.mm-btn {
+    -webkit-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+
+.mm-close.mm-btn:hover {
+    background-color: #a99269;
 }
 
 .mm-title {
@@ -706,13 +778,25 @@ table {
     font-size: 15px;
     font-size: 0.9375rem;
     font-family: "oswald-regular", sans-serif;
-    color: #a99269;
+    color: #fff;
     text-transform: uppercase;
 }
 
 .mm-navbar {
     height: 56px;
     height: 3.5rem;
+    padding: 0 56px;
+    padding: 0 3.5rem;
+    -webkit-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+
+.mm-navbar:hover {
+    background-color: #a99269;
+}
+
+.mm-navbar.mm-hasbtns {
     padding: 0 56px;
     padding: 0 3.5rem;
 }
@@ -748,6 +832,14 @@ table {
 .mm-listview .mm-next {
     width: 56px;
     width: 3.5rem;
+    background-color: transparent;
+    -webkit-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+
+.mm-listview .mm-next:hover {
+    background-color: #a99269;
 }
 
 .mm-listview .mm-next + a,
@@ -756,41 +848,24 @@ table {
     margin-right: 3.5rem;
 }
 
-html.mm-opening .mm-slideout {
-    -webkit-transform: translate3d(80%, 0, 0);
-    transform: translate3d(80%, 0, 0);
+.mm-listview > li > a,
+.mm-listview > li > span {
+    color: #fff;
 }
 
-@media all and (max-width: 175px) {
-    html.mm-opening .mm-slideout {
-        -webkit-transform: translate3d(140px, 0, 0);
-        transform: translate3d(140px, 0, 0);
-    }
+.mm-menu .mm-btn::after,
+.mm-menu .mm-btn::before {
+    border-color: #fff;
 }
 
-@media all and (min-width: 360px) {
-    html.mm-opening .mm-slideout {
-        -webkit-transform: translate3d(288px, 0, 0);
-        transform: translate3d(288px, 0, 0);
-    }
+.mm-menu .mm-listview > li .mm-arrow::after,
+.mm-menu .mm-listview > li .mm-next::after {
+    border-color: #fff;
 }
 
-html.mm-opening.mm-columns-1 .mm-slideout {
-    -webkit-transform: translate3d(80%, 0, 0);
-    transform: translate3d(80%, 0, 0);
-}
-
-@media all and (max-width: 175px) {
-    html.mm-opening.mm-columns-1 .mm-slideout {
-        -webkit-transform: translate3d(140px, 0, 0);
-        transform: translate3d(140px, 0, 0);
-    }
-}
-
-@media all and (min-width: 360px) {
-    html.mm-opening.mm-columns-1 .mm-slideout {
-        -webkit-transform: translate3d(288px, 0, 0);
-        transform: translate3d(288px, 0, 0);
+@media all and (max-width: 767px) {
+    .navigation__item.has-child::before {
+        display: none;
     }
 }
 
@@ -839,9 +914,6 @@ html.mm-opening.mm-columns-1 .mm-slideout {
     width: 80%;
     min-width: 140px;
     padding: 0;
-    color: rgba(0, 0, 0, 0.7);
-    background: #f3f3f3;
-    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .mm-panels,
@@ -1021,8 +1093,6 @@ li.mm-vertical.mm-opened > .mm-panel {
     margin: 0;
     line-height: 20px;
     text-align: center;
-    border-color: inherit;
-    border-bottom: 1px solid;
 }
 
 .mm-navbar > * {
@@ -1064,34 +1134,15 @@ li.mm-vertical.mm-opened > .mm-panel {
     position: relative;
 }
 
-.mm-listview > li,
-.mm-listview > li .mm-next,
-.mm-listview > li .mm-next::before,
-.mm-listview > li::after {
-    border-color: inherit;
-}
-
 .mm-listview > li > a,
 .mm-listview > li > span {
     display: block;
     margin: 0;
-    color: inherit;
 }
 
 .mm-listview > li > a.mm-arrow,
 .mm-listview > li > span.mm-arrow {
     padding-right: 50px;
-}
-
-.mm-listview > li:not(.mm-divider)::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 20px;
-    display: block;
-    content: '';
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
 }
 
 .mm-listview .mm-next {
@@ -1101,18 +1152,6 @@ li.mm-vertical.mm-opened > .mm-panel {
     bottom: 0;
     z-index: 2;
     padding: 0;
-    background: rgba(3, 2, 1, 0);
-}
-
-.mm-listview .mm-next::before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    content: '';
-    border-left-style: solid;
-    border-left-width: 1px;
 }
 
 .mm-listview .mm-next.mm-fullsubopen {
@@ -1163,23 +1202,8 @@ li.mm-vertical.mm-opened > .mm-panel {
     padding-top: 25px;
 }
 
-.mm-menu .mm-btn::after,
-.mm-menu .mm-btn::before {
-    border-color: rgba(0, 0, 0, 0.3);
-}
-
 .mm-menu .mm-listview {
     border-color: rgba(0, 0, 0, 0.1);
-}
-
-.mm-menu .mm-listview > li .mm-arrow::after,
-.mm-menu .mm-listview > li .mm-next::after {
-    border-color: rgba(0, 0, 0, 0.3);
-}
-
-.mm-menu .mm-listview > li.mm-selected > a:not(.mm-next),
-.mm-menu .mm-listview > li.mm-selected > span {
-    background: rgba(255, 255, 255, 0.5);
 }
 
 .mm-menu .mm-divider,
@@ -1780,7 +1804,6 @@ html.mm-dropdown.mm-opened:not(.mm-opening) .mm-menu {
 
 .mm-menu > .mm-navbar {
     z-index: 3;
-    padding: 0;
     background: inherit;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -1795,10 +1818,6 @@ html.mm-dropdown.mm-opened:not(.mm-opening) .mm-menu {
 
 .mm-navbar-bottom ~ .mm-navbar-bottom {
     border-top: none;
-}
-
-.mm-navbar.mm-hasbtns {
-    padding: 0 40px;
 }
 
 .mm-navbar[class*=mm-navbar-content-] > * {
@@ -3070,6 +3089,4 @@ html.mm-opening .mm-menu.mm-next {
     position: relative;
     z-index: 10;
     display: block;
-    width: 25px;
-    height: 25px;
 }
