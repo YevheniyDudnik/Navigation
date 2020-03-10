@@ -549,7 +549,7 @@ table {
     color: #fff;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    content: "\f068";
+    content: "\f067";
     text-rendering: auto;
     border: 0;
     -webkit-transition: content .5s ease, background-color .5s ease;
@@ -570,7 +570,7 @@ table {
 }
 
 .navigation__item > .sublevel-1 .has-child:hover::before {
-    content: "\f067";
+    content: "\f068";
     background-color: #a99269;
 }
 

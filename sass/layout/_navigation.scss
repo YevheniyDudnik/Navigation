@@ -112,7 +112,7 @@
                     color: $first-color;
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
-                    content: "\f068";
+                    content: "\f067";
                     text-rendering: auto;
                     border: 0;
                     transition: content .5s ease, background-color .5s ease;
@@ -130,7 +130,7 @@
 
                 &:hover {
                     &::before {
-                        content: "\f067";
+                        content: "\f068";
                         background-color: $third-color;
                     }
 
