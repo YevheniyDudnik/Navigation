@@ -31,13 +31,13 @@ function navigationSublevelWrap(list, subnavClass) {
                     var elemParent = $(this).closest('li');
 
                     elemParent.addClass(options.openCloseClass).children('div').addClass(options.slideClass);
-                    createBlock('<span>', options.openerClass, elemParent.children('a'));
+                    createBlock('<span>', options.openerClass, elemParent);
                 });
             }
         });
         
         function createBlock(element, className, place) {
-            $(element).addClass(className).appendTo(place);
+            $(element).addClass(className).prependTo(place);
         }
     };
 })(jQuery);
